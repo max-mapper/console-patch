@@ -7,7 +7,13 @@ module.exports = function(onConsole) {
     var proxy = function consoleProxy() {
       var args = [].slice.call(arguments)
       onConsole({method: method, arguments: args})
-      orig.apply(console, args)
+      if ( orig.apply ) {
+        // Do this for normal browsers
+        orig.apply(console, args)
+      } else {
+        // Do this for IE
+        orig([].slice.apply(args).join(' '));
+      }
     }
     console[method] = proxy
   })
