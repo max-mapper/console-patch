@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/maxogden/console-patch/issues"
   },
-  "homepage": "https://github.com/maxogden/console-patch"
+  "homepage": "https://github.com/maxogden/console-patch",
+  "dependencies": {
+    "foreach": "^2.0.5"
+  }
 }
